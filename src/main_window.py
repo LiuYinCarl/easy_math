@@ -3,6 +3,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from src.tab_window import TabWindow
 
+# 创建主窗口
+
 
 class MainWindow(QMainWindow):
     def __init__(self):

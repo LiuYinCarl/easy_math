@@ -1,5 +1,7 @@
 import webbrowser
 
+# 更新建议 使用模板引擎，将HTML和python代码分开
+
 HTML = "demo_1.html"  # 命名生成的html
 
 f = open(HTML, 'w')
@@ -27,7 +29,7 @@ message = """
 $$\\begin{cases}
 a_1x+b_1y+c_1z=d_1 \\\ 
 a_2x+b_2y+c_2z=d_2 \\\ 
-a_3x+b_3y+c_3z=d_3
+a_3x+b_3y+c_3z=d_3 
 \end{cases}
 $$
 </p>
