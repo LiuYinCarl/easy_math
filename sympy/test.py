@@ -1,6 +1,3 @@
-
-
-
 # 测试配置未知数符号
 
 # from sympy import *

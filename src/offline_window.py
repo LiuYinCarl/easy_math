@@ -18,7 +18,7 @@ class OfflineWindow(QWidget):
         super(OfflineWindow, self).__init__(parent)
 
         self.input_window = FormulaInputWindow()
-        html_path = get_abs_path() + '/demo_1.html'  # 获取本地html页面的绝对路径
+        html_path = get_abs_path() + '/show_latex_page.html'  # 获取本地html页面的绝对路径
         print(html_path)
         self.formula_browser = Browser(url=html_path)  # 只允许传入本地页面的绝对路径
         self.figure_canvas = MatplotlibWidget()

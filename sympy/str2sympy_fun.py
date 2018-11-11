@@ -1,4 +1,6 @@
 import sympy
+# 导入可能会用到的符号和数学常量
+from sympy import log, E, sqrt, limit
 
 
 # from sympy import *
@@ -24,8 +26,9 @@ def func_name_substitution(string):
     brief: 函数名称代换, 将输入的字符串中的不规范函数名转换为 sympy 中的函数
     :return: 代换过的函数表达式字符串
     """
+    # 只要会用到的符号或常量都进行替换，无论替换前后是否相同，保持一致性
     func_dict = {'^': '**', '√': 'sqrt', 'lim': 'limit', '✕': '*', '÷': '/',
-                 'e': 'sympy.E', 'log': 'sympy.log'}
+                 'e': 'E', 'log': 'log'}
     for key, value in func_dict.items():
         string = string.replace(key, value)
     return string
@@ -77,13 +80,17 @@ class CalcDerivative(object):
         self.times = times
 
     def calc(self):
+        """
+        求解导数
+        :return: 导数计算后的结果
+        """
         self.func = func_name_substitution(self.func)
-        print(self.func)
         deri = sympy.Derivative(sympy.sympify(self.func), sympy.S(self.deri_param), self.times).doit()
         return deri
 
     def get_latex_expr(self, func):
         """
+        得到相应sympy表达式的latex表达式
         :param func: sympy 中的函数表达式
         :return: latex 表达式
         """
@@ -105,6 +112,6 @@ if __name__ == '__main__':
     func = sympy.simplify(demo.calc())
     latex = demo.get_latex_expr(func)
 
-    print(str_1)
+    print(str_3)
     print(func)
     print(latex)
